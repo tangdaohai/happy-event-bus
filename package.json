@@ -1,0 +1,20 @@
+{
+  "name": "happy-event-bus",
+  "version": "0.0.1",
+  "description": "event bus util and support symbol/string/number.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "keywords": [
+    "event-bus"
+  ],
+  "author": "tangdaohai@outlook.com",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^26.0.15",
+    "jest": "^26.6.3",
+    "ts-jest": "^26.4.3",
+    "typescript": "^4.0.5"
+  }
+}
