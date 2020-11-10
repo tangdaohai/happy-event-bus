@@ -20,10 +20,16 @@ export new Emitter()
 
 import emitter from './emitter.js'
 
-emitter.on('anyone', (...item) => {console.log(item)}) // -> ['foo']/['foo', 'bar']
+emitter.on('anyone', (...item) => { console.log(item) }) // -> ['foo']/['foo', 'bar']
 emitter.emit('anyone', 'foo')
 emitter.emit('anyone', 'foo', 'bar')
 
+// number
+emitter.on(1, () => {})
+// symbol
+const foo = Symbol('foo')
+emitter.on(foo, (item) => { console.log(item) }) // -> foo
+emitter.emit(foo, 'foo')
 ```
 
 ##### once
