@@ -2,18 +2,27 @@
   "name": "happy-event-bus",
   "version": "0.0.1",
   "description": "event bus util and support symbol/string/number.",
-  "main": "index.js",
+  "source": "src/index.ts",
+  "amdName": "HappyEventBus",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "esmodule": "dist/index.modern.js",
+  "unpkg": "dist/index.umd.js",
+  "types": "dist/types",
   "scripts": {
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "build": "microbundle"
   },
   "keywords": [
     "event-bus"
   ],
   "author": "tangdaohai@outlook.com",
+  "homepage": "https://github.com/tangdaohai/happy-event-bus",
   "license": "MIT",
   "devDependencies": {
     "@types/jest": "^26.0.15",
     "jest": "^26.6.3",
+    "microbundle": "^0.12.4",
     "ts-jest": "^26.4.3",
     "typescript": "^4.0.5"
   }
