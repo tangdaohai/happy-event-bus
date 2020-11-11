@@ -1,6 +1,20 @@
 # happy-event-bus
 
+[![Github Actions Test](https://github.com/tangdaohai/happy-event-bus/workflows/test%20CI/badge.svg)](https://github.com/tangdaohai/happy-event-bus/actions?query=workflow%3A%22test+CI%22) [![codecov.io](https://codecov.io/gh/tangdaohai/happy-event-bus/branch/master/graph/badge.svg)](https://codecov.io/gh/tangdaohai/happy-event-bus)
+
 event bus util and support symbol/string/number.
+
+### install
+
+```sh
+
+npm i happy-event-bus
+
+# or
+
+yarn add happy-event-bus
+
+```
 
 ### use
 
