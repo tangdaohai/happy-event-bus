@@ -2,9 +2,9 @@ import Emitter from '../src/index'
 
 describe('event bus', () => {
   let emitter = new Emitter()
-  beforeEach(() => {
-    emitter = new Emitter()
-  })
+  // beforeEach(() => {
+  //   emitter = new Emitter()
+  // })
   it('on and emit', () => {
     const fn = jest.fn()
     emitter.on('event', fn)
@@ -105,5 +105,24 @@ describe('event bus', () => {
     emitter.emit(eventType)
 
     expect(fn).toHaveBeenCalled()
+  })
+
+
+  it('the returned function can be off', () => {
+    const foo = jest.fn()
+    const fooListenStopHandle = emitter.on('foo', foo)
+    emitter.emit('foo')
+    expect(foo).toHaveBeenCalledTimes(1)
+    // off foo
+    fooListenStopHandle()
+    emitter.emit('foo')
+    expect(foo).toHaveBeenCalledTimes(1)
+
+    const bar = jest.fn()
+    const barListenStopHandle = emitter.once('bar', bar)
+    // off bar
+    barListenStopHandle()
+    emitter.emit('bar')
+    expect(bar).toHaveBeenCalledTimes(0)
   })
 })
