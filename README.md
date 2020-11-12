@@ -7,7 +7,7 @@ Event bus util and support symbol/string/number.
 * Typescript
 * Can be run in a browser or Node.js(works in any JavaScript runtime)
 * Support multiple event types(symbol/string/number)
-* [Easy and quickly cancel listen](#quickly%20cancel%20listen)
+* [Easy and quickly cancel listen](#quickly-cancel-listen)
 
 ### install
 
