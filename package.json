@@ -1,6 +1,6 @@
 {
   "name": "happy-event-bus",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "event bus util and support symbol/string/number.",
   "source": "src/index.ts",
   "amdName": "HappyEventBus",
@@ -14,7 +14,9 @@
     "build": "microbundle --strict"
   },
   "keywords": [
-    "event-bus"
+    "bus",
+    "event bus",
+    "event hubs"
   ],
   "author": "tangdaohai@outlook.com",
   "homepage": "https://github.com/tangdaohai/happy-event-bus",
