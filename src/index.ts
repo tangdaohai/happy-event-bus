@@ -1,5 +1,6 @@
-type EventNameType = string | number | symbol
-type EventCallback = (...args: Array<any>) => any
+export type EventNameType = string | number | symbol
+export type EventCallback = (...args: Array<any>) => any
+export type ListenStopHandle = () => void
 
 export default class Emitter {
   private eventMap: Map<EventNameType, Array<EventCallback>>
@@ -8,16 +9,18 @@ export default class Emitter {
     this.eventMap = new Map()
   }
 
-  public on = (name: EventNameType, callback: EventCallback): void => {
+  public on = (name: EventNameType, callback: EventCallback): ListenStopHandle => {
     if (!this.eventMap.has(name)) {
       this.eventMap.set(name, [])
     }
 
     const callbackList = this.eventMap.get(name)!
     callbackList.push(callback)
+
+    return () => this.off(name, callback)
   }
 
-  public once = (name: EventNameType, callback: EventCallback): void => {
+  public once = (name: EventNameType, callback: EventCallback): ListenStopHandle => {
     // callback wrapper
     const listener = (...args: Array<any>) => {
       // remove when executed
@@ -25,6 +28,8 @@ export default class Emitter {
       callback(...args)
     }
     this.on(name, listener)
+
+    return () => this.off(name, listener)
   }
 
   public emit =  (name: EventNameType, ...args: Array<any>): void => {
